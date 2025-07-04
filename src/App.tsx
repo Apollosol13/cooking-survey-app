@@ -184,12 +184,23 @@ function App() {
               className="rounded-lg shadow-lg"
             ></iframe>
           </div>
-          <button
-            onClick={handleContinueAfterVideo}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-          >
-            Continue Survey
-          </button>
+          <div className="flex justify-between items-center mt-6">
+            <button
+              onClick={() => {
+                setShowVideo(false);
+                setCurrentQuestion(2); // Go back to the previous question (index 2)
+              }}
+              className="flex items-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200 text-gray-300 hover:text-white hover:bg-gray-800"
+            >
+              Previous
+            </button>
+            <button
+              onClick={handleContinueAfterVideo}
+              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+            >
+              Continue Survey
+            </button>
+          </div>
         </div>
       </div>
     );
